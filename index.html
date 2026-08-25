@@ -3,16 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سایت تستی شیش</title>
+    <title>این وب‌سایت مسدود شده است</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0a0a0a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #e0e0e0;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(255, 77, 77, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Glassmorphism card */
+        .glass-card {
+            background: rgba(20, 20, 20, 0.55);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 50px 40px;
+            max-width: 620px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 77, 77, 0.15) inset;
+            position: relative;
+            z-index: 2;
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+
+        @keyframes subtle-float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* Warning icon */
+        .warning-icon {
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 15px;
+            color: #ff4d4d;
+            text-shadow: 0 0 30px rgba(255, 77, 77, 0.7), 0 0 60px rgba(255, 77, 77, 0.3);
+            display: inline-block;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 10px 0 20px;
+            letter-spacing: -0.3px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .description {
+            font-size: 1.05rem;
+            color: #b0b0b0;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            font-weight: 400;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            margin: 35px 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .divider::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -1px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: rgba(255, 77, 77, 0.4);
+            border-radius: 2px;
+        }
+
+        .info-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin: 25px 0 10px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            color: #d0d0d0;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px 20px;
+            border-radius: 40px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .reason-label {
+            font-weight: 500;
+            color: #ff9999;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #ff4d4d;
+            border-radius: 50%;
+            margin-left: 4px;
+            box-shadow: 0 0 15px #ff4d4d;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 10px #ff4d4d, 0 0 20px rgba(255, 77, 77, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px #ff4d4d, 0 0 40px rgba(255, 77, 77, 0.8);
+            }
+        }
+
+        .status-text {
+            color: #ff8080;
+            font-weight: 600;
+        }
+
+        .contact-note {
+            font-size: 0.95rem;
+            color: #999;
+            margin-top: 30px;
+            line-height: 1.7;
+            font-style: normal;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 25px 20px 15px;
+            font-size: 0.75rem;
+            color: #666;
+            text-align: center;
+            letter-spacing: 0.3px;
+            z-index: 2;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .glass-card {
+                padding: 35px 20px;
+                border-radius: 22px;
+            }
+
+            .warning-icon {
+                font-size: 3.8rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .description {
+                font-size: 0.9rem;
+                max-width: 100%;
+            }
+
+            .info-row {
+                font-size: 0.9rem;
+                padding: 6px 15px;
+            }
+
+            .divider {
+                margin: 25px 0;
+            }
+
+            .contact-note {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .warning-icon {
+                font-size: 3rem;
+            }
+
+            .glass-card {
+                padding: 25px 15px;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="glass-card">
+        <div class="warning-icon">⛔</div>
+        <h1>این وب‌سایت مسدود شده است</h1>
+        <p class="description">
+            دسترسی به این وب‌سایت به دلیل عدم پرداخت هزینه خدمات مسدود شده است.
+        </p>
+        <p class="description">
+            مالک وب‌سایت برای رفع این وضعیت باید هزینه‌های مربوط به سرویس را تسویه کند. تا زمان انجام تسویه و بررسی توسط پشتیبانی، امکان دسترسی به محتوای سایت وجود نخواهد داشت.
+        </p>
 
-    <h1>سایت من بالاخره ساخته شد 🚀</h1>
+        <hr class="divider">
 
-    <p>
-        این اولین سایت من با GitHub Pages است.
-    </p>
+        <div class="info-block">
+            <div class="info-row">
+                <span class="reason-label">دلیل مسدودسازی:</span>
+                <span>عدم پرداخت هزینه خدمات</span>
+            </div>
+            <div class="info-row">
+                <span class="reason-label">وضعیت:</span>
+                <span class="status-dot"></span>
+                <span class="status-text">مسدود</span>
+            </div>
+        </div>
 
+        <p class="contact-note">
+            در صورت نیاز به اطلاعات بیشتر، لطفاً با ارائه‌دهنده خدمات یا پشتیبانی سایت تماس بگیرید.
+        </p>
+    </div>
+
+    <footer>
+        © تمامی حقوق این صفحه متعلق به ارائه‌دهنده خدمات میزبانی وب است.
+    </footer>
+
+    <script>
+        (function() {
+            // Fade-in effect on page load
+            window.addEventListener('DOMContentLoaded', function() {
+                document.body.classList.add('loaded');
+            });
+
+            // Prevent any right-click or text selection to emphasize static nature,
+            // but without interfering with accessibility (keep it subtle).
+            document.body.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            // Optional: disable selection only on the card to reinforce no-copy policy
+            const card = document.querySelector('.glass-card');
+            if (card) {
+                card.addEventListener('selectstart', function(e) {
+                    e.preventDefault();
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
