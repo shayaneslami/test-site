@@ -1,584 +1,308 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" xmlns="http://www.w3.org/1999/xhtml">
-
+<html lang="fa" dir="rtl">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PRTJRCR"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'GTM-PRTJRCR');
-    </script> -->
-    <script>
-         
-            (function (w, d, s, l, i) {
-                w[l] = w[l] || []; w[l].push({
-                    'gtm.start':
-                        new Date().getTime(), event: 'gtm.js'
-                }); var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-PRTJRCR');
-         
-        
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);console.log("new gtag called:",arguments);}
-        gtag('js', new Date());
-
-        
-
-        gtag('config', 'GTM-PRTJRCR');
-
-        // setTimeout(() => {
-        //     gtag('event','page_view',{
-        //         "page_location":window.location.href,
-        //         "page_title":document.title,
-        //         "user_agent":window.navigator.userAgent,
-        //     });
-        // }, 1000);
-    </script>
-    <link rel="canonical" href="https://gameup.ir/" />
-    <link rel="profile" href="https://gmpg.org/xfn/11" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta charset="utf-8">
-    <meta name="keywords" content="یم آپ,گیمآپ,گیماپ,گیم اپ,گیم‌اپ,گیم‌آپ,gameup,game up,بازی ایرانی,دانلود بازی,دانلود بازی ایرانی">
-    <meta name="description" content="مرجع ایرانی دانلود بازی های کامپیوتری با ترافیک نیم بهاء">
-    <meta http-equiv="content-language" content="fa" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="icon" href="/assets/V2.0/img/fav.png" type="image/x-icon">
-    <link href="/assets/V2.0/img/fav.png" rel="shortcut icon">
-    <link rel="apple-touch-icon" href="icon-V2.0.png">
-    <link rel="mask-icon" href="/assets/V2.0/svg/minilogo.svg" color="#343744">
-    <meta property="og:image" content="/icon-V2.0.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#1a1c24">
-    <meta name="theme-color" content="#1a1c24">
-    <meta name="msvalidate.01" content="01AC90F9E3F3CBA638194EAC8158D511" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="GameUP">
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"GameUP","url":"https://gameup.ir/","address":"","sameAs":["https://www.instagram.com/gameupir/","https://t.me/gameupir","https://twitter.com/gameupir"]}</script>
-
-    
-    <script type="text/javascript" src="https://s1.mediaad.org/serve/22703/retargeting.js" async></script>
-
-    <script>
-        let urlParams = new URLSearchParams(window.location.search);
-        let utm_ma_id = urlParams.get("utm_ma");
-        if (utm_ma_id && localStorage) {
-            localStorage.setItem("utm_ma", utm_ma_id);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>این وب‌سایت مسدود شده است</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        function mediaadPostBack(actionName){
-            try {
-                if (localStorage && localStorage.getItem("utm_ma")) {
-                    var iid = localStorage.getItem("utm_ma");
-                    var xhr = new XMLHttpRequest();
-                    xhr.withCredentials = !0;
-                    xhr.open("GET", "https://s1.mediaad.org/v1/events/post-back?actionName=" + actionName + "&clickId=" + iid, false);
-                    xhr.send();
-                    localStorage.removeItem("utm_ma");
-                }
-            } catch (error) {
-                console.log("mediaadPostBack error",error);
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0a0a0a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #e0e0e0;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(255, 77, 77, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Glassmorphism card */
+        .glass-card {
+            background: rgba(20, 20, 20, 0.55);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 50px 40px;
+            max-width: 620px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 77, 77, 0.15) inset;
+            position: relative;
+            z-index: 2;
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+
+        @keyframes subtle-float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
             }
         }
 
-    </script>
+        /* Warning icon */
+        .warning-icon {
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 15px;
+            color: #ff4d4d;
+            text-shadow: 0 0 30px rgba(255, 77, 77, 0.7), 0 0 60px rgba(255, 77, 77, 0.3);
+            display: inline-block;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+        }
 
-    <!--bootstrap5-->
-    <script type="text/javascript" src="/assets/V2.0/js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="/assets/V2.0/js/jquery-ui.js"></script>
-    <script src="/assets/V2.0/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link href="/assets/V2.0/bootstrap/css/bootstrap.min.css"  media="screen" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link href="/assets/V2.0/bootstrap/css/bootstrap-responsive.css" media="screen" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 10px 0 20px;
+            letter-spacing: -0.3px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
 
-    <!--alerts-->
-    <link href="/assets/V2.0/css/nice-toast-js.min.css?n15" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link href="/assets/V2.0/css/sweetalert2.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    
-    <script src="/assets/V2.0/js/num2persian-min.js"></script>
-    <script src="/assets/V2.0/js/odometer.js"></script>
-    
-    
-    
-    
-    <script src='/assets/V2.0/js/element-queries.js'></script>
-    <script src='/assets/V2.0/js/resize-sensor.js?1'></script>
+        .description {
+            font-size: 1.05rem;
+            color: #b0b0b0;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            font-weight: 400;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    <title>GameUP | گیم‌آپ</title>
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            margin: 35px 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
 
-    <link rel="stylesheet" href="/assets/fonts/Poppins.css" />
-    <link rel="stylesheet" href="/assets/fonts/OpenSans.css" />
+        .divider::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -1px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: rgba(255, 77, 77, 0.4);
+            border-radius: 2px;
+        }
 
-    <!--other-css-->
-    <link rel="stylesheet" href="/assets/V2.0/css/style.css?nn4">
-    <link rel="stylesheet" href="/assets/V2.0/css/main.css?4">
-    <link rel="stylesheet" href="/assets/V2.0/css/responsive.css?nn1">
-    <link rel="stylesheet" href="/assets/V2.0/css/ame.css?n2"  >
-    
-    <script>
-        var google_script_load_count=0;
-        var googleLoginLoaded = ()=> {
-            google_script_load_count++;
-        };
-    </script>
+        .info-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin: 25px 0 10px;
+        }
 
-     
-        <script src="https://apis.google.com/js/platform.js" async onload="googleLoginLoaded()"></script>
-        <script src="https://apis.google.com/js/api:client.js"  async onload="googleLoginLoaded()"></script>
-     
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            color: #d0d0d0;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px 20px;
+            border-radius: 40px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-     
-        <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaloadCallback&render=explicit" async defer ></script> 
-    
-    <script type="text/javascript">
-      recaptcha_sitekey="6LclnCweAAAAAKmMvKP1pdyKEVOqtZuYdU3mSv04";
-    </script>
-    <script>
-        setTimeout(()=>{
-            $("body").removeClass("notloaded");
-        },500)
-    </script>
+        .reason-label {
+            font-weight: 500;
+            color: #ff9999;
+        }
 
+        .status-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #ff4d4d;
+            border-radius: 50%;
+            margin-left: 4px;
+            box-shadow: 0 0 15px #ff4d4d;
+            animation: pulse-dot 2s infinite;
+        }
 
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 10px #ff4d4d, 0 0 20px rgba(255, 77, 77, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px #ff4d4d, 0 0 40px rgba(255, 77, 77, 0.8);
+            }
+        }
+
+        .status-text {
+            color: #ff8080;
+            font-weight: 600;
+        }
+
+        .contact-note {
+            font-size: 0.95rem;
+            color: #999;
+            margin-top: 30px;
+            line-height: 1.7;
+            font-style: normal;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 25px 20px 15px;
+            font-size: 0.75rem;
+            color: #666;
+            text-align: center;
+            letter-spacing: 0.3px;
+            z-index: 2;
+            position: relative;
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .glass-card {
+                padding: 35px 20px;
+                border-radius: 22px;
+            }
+
+            .warning-icon {
+                font-size: 3.8rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .description {
+                font-size: 0.9rem;
+                max-width: 100%;
+            }
+
+            .info-row {
+                font-size: 0.9rem;
+                padding: 6px 15px;
+            }
+
+            .divider {
+                margin: 25px 0;
+            }
+
+            .contact-note {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            .warning-icon {
+                font-size: 3rem;
+            }
+
+            .glass-card {
+                padding: 25px 15px;
+            }
+        }
+    </style>
 </head>
-<body class="notloaded no-user-login" id="top">
-    <div class="clearfix"></div>
-    <button style="opacity: 0;pointer-events: none;top: 0;left: 0;width: 0;height: 0;z-index: -9999;position: absolute;" id="focus-grabber"></button>
-            <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTJRCR"
-                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-        </noscript>
-    
-     
-        
-        <div class="body-top-spacer" ></div>
-                    <div class="download-android-bottom-sheet inmob-flex" style="position: relative;left: unset;top: unset;bottom: unset;margin: 42px auto -26px;border: none;box-shadow: none;width: 100%;max-width: 500px;">
-                <div class="app-logo"><img src="/icon-V2.0.png" alt=""></div>
-                <div class="details">
-                    <div class="title">دانلود برنامه اندروید</div>
-                    <div class="subtitle">تجربه بهتر با برنامه اندروید گیم آپ 🤗</div>
-                </div>
-                <div class="download-btn"><button class="btn button">دانلود</button></div>
-                <!-- <div class="close-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4.99422 3.90637C4.73832 3.90637 4.47072 3.99238 4.27542 4.18738C3.88492 4.57838 3.88492 5.23437 4.27542 5.62537L10.5567 11.9064L4.27542 18.1874C3.88492 18.5784 3.88492 19.2344 4.27542 19.6254C4.66602 20.0154 5.32242 20.0154 5.71302 19.6254L11.9942 13.3444L18.2754 19.6254C18.666 20.0154 19.3224 20.0154 19.713 19.6254C20.1035 19.2344 20.1035 18.5784 19.713 18.1874L13.4317 11.9064L19.713 5.62537C20.1035 5.23437 20.1035 4.57838 19.713 4.18738C19.5177 3.99238 19.25 3.90637 18.9942 3.90637C18.7383 3.90637 18.4708 3.99238 18.2754 4.18738L11.9942 10.4684L5.71302 4.18738C5.51772 3.99238 5.25012 3.90637 4.99422 3.90637Z" fill="white"/>
-</svg>
-</div> -->
+<body>
+    <div class="glass-card">
+        <div class="warning-icon">⛔</div>
+        <h1>این وب‌سایت مسدود شده است</h1>
+        <p class="description">
+            دسترسی به این وب‌سایت به دلیل عدم پرداخت هزینه خدمات مسدود شده است.
+        </p>
+        <p class="description">
+            مالک وب‌سایت برای رفع این وضعیت باید هزینه‌های مربوط به سرویس را تسویه کند. تا زمان انجام تسویه و بررسی توسط پشتیبانی، امکان دسترسی به محتوای سایت وجود نخواهد داشت.
+        </p>
+
+        <hr class="divider">
+
+        <div class="info-block">
+            <div class="info-row">
+                <span class="reason-label">دلیل مسدودسازی:</span>
+                <span>عدم پرداخت هزینه خدمات</span>
             </div>
-                <section class="topmenu" >
+            <div class="info-row">
+                <span class="reason-label">وضعیت:</span>
+                <span class="status-dot"></span>
+                <span class="status-text">مسدود</span>
+            </div>
+        </div>
 
-            <header>
-                <div class="container">
+        <p class="contact-note">
+            در صورت نیاز به اطلاعات بیشتر، لطفاً با ارائه‌دهنده خدمات یا پشتیبانی سایت تماس بگیرید.
+        </p>
+    </div>
 
-                    <a aria-label="gameup" class="logo inpc" href="/"><img src="/assets/V2.0/svg/logo.svg" alt="GameUP SVG Logo" /></a>
-                    <div onclick="window.location.href='/'" style="position: absolute;height: 20px;width: 20px;padding: 10px;box-sizing: initial;display: flex;cursor: pointer; opacity: 0;pointer-events: none;">
-                        <svg xmlns="http://www.w3.org/2000/svg"  height="48" viewBox="0 -960 960 960" width="48"><path fill="currentColor" fill-rule="evenodd"  d="M647-435H139v-91h508L415-758l66-64 341 341-342 342-65-63 232-233Z"/></svg>
-                    </div>
+    <footer>
+        © تمامی حقوق این صفحه متعلق به ارائه‌دهنده خدمات میزبانی وب است.
+    </footer>
 
-                    <div class="topsearch " >
-                        <form action="/search/" method="get">
-                            <button class="bbtn" aria-label="search" type="button" onclick="$('.topsearch.full-width-search-bar').css('opacity','').css('pointer-events','');$('.searchopen').trigger('click')" style="color: #8F96AF !important;"><svg xmlns="http://www.w3.org/2000/svg"  height="48" viewBox="0 -960 960 960" width="48"><path fill="currentColor" fill-rule="evenodd"  d="M647-435H139v-91h508L415-758l66-64 341 341-342 342-65-63 232-233Z"/></svg></button>
-                            <input type="text" name="search" id="searchput" placeholder="نام بازی را جستجو کنید" value="" class="sput" autocomplete="off" />
-                            <button class="sbtn" aria-label="search" type="submit" style="color: #8F96AF !important;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 4C7.5817 4 4 7.58201 4 12C4 16.418 7.5817 20 12 20C13.8367 20 15.5776 19.369 16.9279 18.329L19.2812 20.719C19.6718 21.109 20.3282 21.109 20.7188 20.719C21.1093 20.328 21.1093 19.672 20.7188 19.281L18.3353 16.921C19.3761 15.571 20 13.837 20 12C20 7.58201 16.4183 4 12 4ZM12 6C15.3137 6 18 8.68601 18 12C18 15.314 15.3137 18 12 18C8.6863 18 6 15.314 6 12C6 8.68601 8.6863 6 12 6Z" fill="currentColor" fill-rule="evenodd" />
-</svg>
-</button>
-                        </form>
-                        <div class="searchresult hide">
-                            <div class="result_inner">
+    <script>
+        (function() {
+            // Fade-in effect on page load
+            window.addEventListener('DOMContentLoaded', function() {
+                document.body.classList.add('loaded');
+            });
 
-                                <ul class="livelist">
-                                </ul>
-                                <!--live-->
-
-                            </div>
-                            <!--inner-->
-                        </div>
-                        <!--searchresult-->
-
-
-
-
-                        <script>
-                            $(document).ready(function() {
-
-                                var load_search_results=false;
-                                var last_search_query="";
-                                var last_search_request=0;
-
-                                $(".topsearch input[name='search']").focus(function(){
-                                    clearInterval(load_search_results);
-                                    load_search_results=setInterval(() => {
-                                        if($(".topsearch input[name='search']").val().replace(new RegExp(" ", 'g'), '')!=""){
-                                            if($(".topsearch input[name='search']").val().replace(new RegExp(" ", 'g'), '')!=last_search_query){
-
-                                                if(last_search_request+0.1>((Date.now())/4000)){
-                                                    gtag('event','search',{
-                                                        "search_term":$(".topsearch input[name='search']").val(),
-                                                    });
-                                                    //mediaadPostBack('search');
-                                                }
-
-                                                if(last_search_request+0.1>((Date.now())/1000)){
-                                                    return;
-                                                }
-                                                last_search_request=((Date.now())/1000);
-                                                $.ajax({
-                                                    url: "/search/",
-                                                    data: {
-                                                        "search": $(".topsearch input[name='search']").val(),
-                                                        "_token": "ed6lYkj2ozUTYCLlH0f1Zt4roP8Aqv33OJKEHBvooPqczV3LSd0vhfmV9myxEx2z",
-                                                    },
-                                                    type: 'post',
-                                                    timeout: 3000,
-                                                    success: function(data){
-                                                        if(!$(".topsearch input[name='search']").is(":focus")){
-                                                            return;
-                                                        }
-                                                        if(data.data.results.length>0){
-                                                            $("body").addClass("atsearch");
-                                                            $(".topsearch .searchresult .livelist").html("");
-                                                            data.data.results.forEach(function(item,index) {
-                                                                $(".topsearch .searchresult .livelist").append('<li><a href="'+(item['link']).replace(/"/g, '\\"')+`"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 4C7.5817 4 4 7.58201 4 12C4 16.418 7.5817 20 12 20C13.8367 20 15.5776 19.369 16.9279 18.329L19.2812 20.719C19.6718 21.109 20.3282 21.109 20.7188 20.719C21.1093 20.328 21.1093 19.672 20.7188 19.281L18.3353 16.921C19.3761 15.571 20 13.837 20 12C20 7.58201 16.4183 4 12 4ZM12 6C15.3137 6 18 8.68601 18 12C18 15.314 15.3137 18 12 18C8.6863 18 6 15.314 6 12C6 8.68601 8.6863 6 12 6Z" fill="currentColor" fill-rule="evenodd" />
-</svg>
-<b>`+(item['title']).replace(/&/g, "&amp;").replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/"/g, "&quot;")+'</b></a></li>');
-                                                            });
-                                                        }else{
-                                                            $("body").removeClass("atsearch");
-                                                        }
-                                                    },
-                                                    error: function(XMLHttpRequest, textStatus, errorThrown){
-                                                    },
-                                                    complete: function(XMLHttpRequest, textStatus){
-                                                    }
-                                                });
-
-                                            }
-                                        }else{
-                                            $("body").removeClass("atsearch");
-                                        }
-                                        
-                                        if($(".topsearch input[name='search']").val().replace(new RegExp(" ", 'g'), '')!=last_search_query){
-                                            last_search_query=$(".topsearch input[name='search']").val().replace(new RegExp(" ", 'g'), '');
-                                        }
-                                    }, 100);
-                                });
-
-                                $(".searchopen").click(function() {
-                                    clearInterval(load_search_results);
-                                    $("body").removeClass("atsearch");
-                                });
-                                $(".topsearch input[name='search']").on("blur", function() {
-                                    if(!$( document.activeElement ).is(".topsearch *")){
-                                        setTimeout(() => {
-                                            clearInterval(load_search_results);
-                                            $("body").removeClass("atsearch");
-                                        }, 300);
-                                    }
-                                });
-
-                            });
-                        </script>
-                    </div>
-                    <!--search-->
-                    <div class="navbar-nav headermenu">
-
-                        
-                        <div class="nav-item dropdown">
-                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" >ژانر ها</a>
-                            <div class="dropdown-menu c-scroll left-scroll">
-                                                                    <a href="/search?genre=strategic" class="dropdown-item">استراتژیک</a>
-                                                                        <a href="/search?genre=action" class="dropdown-item">اکشن</a>
-                                                                        <a href="/search?genre=adventure" class="dropdown-item">ماجراجویی</a>
-                                                                        <a href="/search?genre=stealth" class="dropdown-item">مخفی کاری</a>
-                                                                        <a href="/search?genre=rpg" class="dropdown-item">نقش آفرینی</a>
-                                                                        <a href="/search?genre=shooter" class="dropdown-item">تیراندازی - شوتر</a>
-                                                                        <a href="/search?genre=platformer" class="dropdown-item">پلتفرمر</a>
-                                                                        <a href="/search?genre=puzzle" class="dropdown-item">پازل</a>
-                                                                        <a href="/search?genre=metroidvania" class="dropdown-item">مترویدوانیا</a>
-                                                                        <a href="/search?genre=horror" class="dropdown-item">ترسناک</a>
-                                                                        <a href="/search?genre=racing" class="dropdown-item">رانندگی</a>
-                                                                        <a href="/search?genre=simulation" class="dropdown-item">شبیه سازی</a>
-                                                                        <a href="/search?genre=science_fiction" class="dropdown-item">علمی تخیلی</a>
-                                                                        <a href="/search?genre=indie" class="dropdown-item">بازی مستقل</a>
-                                                                        <a href="/search?genre=survival" class="dropdown-item">بقا</a>
-                                                                        <a href="/search?genre=tactical" class="dropdown-item">تاکتیکال</a>
-                                                                        <a href="/search?genre=Party_Games" class="dropdown-item">پارتی گیمز</a>
-                                                                        <a href="/search?genre=action_adventure" class="dropdown-item">اکشن ماجراجویی</a>
-                                                                        <a href="/search?genre=sport" class="dropdown-item">ورزشی</a>
-                                                                        <a href="/search?genre=open_world" class="dropdown-item">جهان باز</a>
-                                                                </div>
-                        </div>
-
-
-                        <div class="nav-item dropdown">
-                            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">بیشتر</a>
-                            <div class="dropdown-menu c-scroll left-scroll">
-                                <a href="/blog/" class="dropdown-item" >بلاگ</a>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#support"  class="dropdown-item">پشتیبانی</a>
-                                <a href="/FAQ/"  class="dropdown-item">پرسش‌های متداول</a>
-                                <a href="/TOS/"  class="dropdown-item">شرایط و قوانین استفاده</a>
-                                <a href="/contact-us/"  class="dropdown-item">تماس با ما</a>
-                                <!-- <a href="/partners/"  class="dropdown-item">شرکای تجاری</a> -->
-                                <!-- <a href="/about-us/"  class="dropdown-item">درباره‌ما</a> -->
-                            </div>
-                        </div>
-
-                        <div class="nav-item inmob" style="margin: auto 0 0 0;">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#support" class="btn btn-secondary btn-lx button">
-                                <span>پشتیبانی آنلاین</span>
-                            </a>
-                        </div>
-
-
-                        <div class="socials inmob">
-                            <a data-is-external="1" target="_blank" href="https://www.instagram.com/gameupir/"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-  <defs>
-  </defs>
-  <g id="instagram" transform="translate(-1 -1)" >
-    <g id="Group_116" data-name="Group 116" transform="translate(4.207 4.515)">
-      <path id="Path_21" data-name="Path 21" d="M16.586,1.857A4.657,4.657,0,0,1,21.229,6.5v9.286a4.657,4.657,0,0,1-4.643,4.643H7.3a4.657,4.657,0,0,1-4.643-4.643V6.5A4.657,4.657,0,0,1,7.3,1.857Zm0-1.857H7.3A6.519,6.519,0,0,0,.8,6.5v9.286a6.519,6.519,0,0,0,6.5,6.5h9.286a6.519,6.519,0,0,0,6.5-6.5V6.5a6.519,6.519,0,0,0-6.5-6.5Z" fill="#fff"/>
-      <path id="Path_22" data-name="Path 22" d="M18.407,6.786a1.39,1.39,0,1,1,.533-.1A1.39,1.39,0,0,1,18.407,6.786Zm-6.036.928A3.718,3.718,0,1,1,9.746,8.8a3.718,3.718,0,0,1,2.625-1.086Zm0-1.857a5.572,5.572,0,1,0,3.94,1.632,5.572,5.572,0,0,0-3.94-1.632Z" transform="translate(-0.428 -0.286)" fill="#fff"/>
-    </g>
-  </g>
-</svg>
-</a>
-                            <a data-is-external="1" target="_blank" href="https://www.facebook.com/gameup.ir/"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-  <defs>
-  </defs>
-  <g id="facebook" transform="translate(-1 -1)" >
-    <path id="Vector-2" d="M20.222,10.111A10.111,10.111,0,1,0,8.531,20.1V13.034H5.963V10.111H8.531V7.883A3.569,3.569,0,0,1,12.35,3.949a15.537,15.537,0,0,1,2.264.2V6.635H13.338a1.462,1.462,0,0,0-1.648,1.58v1.9h2.8l-.448,2.924H11.691V20.1a10.113,10.113,0,0,0,8.531-9.989Z" transform="translate(6.04 5.608)" fill="#fff" fill-rule="evenodd"/>
-  </g>
-</svg>
-</a>
-                            <a data-is-external="1" target="_blank" href="https://twitter.com/GameUp_IR"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-  <defs>
-  </defs>
-  <g id="twitter" transform="translate(-1 -1)" >
-    <path id="Vector" d="M24.2,2.675a10.09,10.09,0,0,1-2.827.765A4.875,4.875,0,0,0,23.539.76a9.886,9.886,0,0,1-3.128,1.175A4.957,4.957,0,0,0,16.815.4a4.884,4.884,0,0,0-4.923,4.845,4.662,4.662,0,0,0,.127,1.105A14.035,14.035,0,0,1,6.41,4.889a14.035,14.035,0,0,1-4.54-3.6A4.784,4.784,0,0,0,1.2,3.72,4.833,4.833,0,0,0,3.4,7.755,4.875,4.875,0,0,1,1.161,7.15v.06a4.868,4.868,0,0,0,3.95,4.75,5.044,5.044,0,0,1-1.3.17,4.73,4.73,0,0,1-.925-.09,4.921,4.921,0,0,0,4.6,3.365A9.98,9.98,0,0,1,1.375,17.48,10.162,10.162,0,0,1,.2,17.41,13.935,13.935,0,0,0,7.737,19.6,13.8,13.8,0,0,0,21.759,5.81c0-.21,0-.42-.015-.625A9.923,9.923,0,0,0,24.2,2.675Z" transform="translate(3.951 5.658)" fill="#fff"/>
-  </g>
-</svg>
-</a>
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-  <defs>
-  </defs>
-  <g id="youtube" transform="translate(-1 -1)" >
-    <path id="Vector-1" d="M22.569,4.062a3.357,3.357,0,0,0-3.2-3.507C16.98.443,14.54.4,12.046.4h-.777C8.781.4,6.337.443,3.944.556A3.365,3.365,0,0,0,.752,4.071C.644,5.609.6,7.146.6,8.684S.645,11.76.748,13.3A3.369,3.369,0,0,0,3.94,16.82c2.514.117,5.092.168,7.714.164s5.2-.046,7.714-.164a3.369,3.369,0,0,0,3.2-3.52c.1-1.542.151-3.079.147-4.621S22.673,5.6,22.569,4.062ZM9.541,12.921V4.434L15.8,8.675Z" transform="translate(4.494 6.965)" fill="#fff"/>
-  </g>
-</svg>
-</a>
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-  <defs>
-  </defs>
-  <g id="aparat" transform="translate(-1 -1)" >
-    <g id="icon_black" data-name="icon black" transform="translate(5.015 4.514)">
-      <path id="Path_252" data-name="Path 252" d="M9.834.652,7.783.117A3.45,3.45,0,0,0,3.56,2.566L3.049,4.5A10.564,10.564,0,0,1,9.834.652Z" transform="translate(-0.218)" fill="#fff"/>
-      <path id="Path_253" data-name="Path 253" d="M.62,13.814l-.5,1.894a3.45,3.45,0,0,0,2.449,4.219l1.956.522a10.567,10.567,0,0,1-3.9-6.635Z" transform="translate(0 -0.99)" fill="#fff"/>
-      <path id="Path_254" data-name="Path 254" d="M21.066,3.555l-2.194-.584a10.564,10.564,0,0,1,4.043,7.075l.6-2.282a3.45,3.45,0,0,0-2.452-4.209Z" transform="translate(-1.353 -0.213)" fill="#fff"/>
-      <path id="Path_255" data-name="Path 255" d="M13.589,22.955l2.1.567a3.45,3.45,0,0,0,4.219-2.449l.593-2.23a10.571,10.571,0,0,1-6.912,4.112Z" transform="translate(-0.974 -1.351)" fill="#fff"/>
-      <path id="Path_256" data-name="Path 256" d="M11.255,1.594a9.661,9.661,0,1,0,6.829,2.831,9.661,9.661,0,0,0-6.829-2.831ZM5.784,6.414A2.758,2.758,0,1,1,5.79,7.49a2.758,2.758,0,0,1-.006-1.076ZM9.8,14.761A2.759,2.759,0,1,1,9.8,13.684,2.759,2.759,0,0,1,9.8,14.761Zm1.171-2.234a1.226,1.226,0,1,1,.48,0,1.226,1.226,0,0,1-.48,0Zm5.755,3.564a2.758,2.758,0,1,1-.006-1.077,2.758,2.758,0,0,1,.006,1.077ZM14.9,10.978a2.738,2.738,0,1,1,1.077,0A2.738,2.738,0,0,1,14.9,10.978Z" transform="translate(-0.114 -0.114)" fill="#fff"/>
-    </g>
-  </g>
-</svg>
-</a>
-                            <a data-is-external="1" target="_blank" href="https://www.linkedin.com/company/gameup-ir"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-  <defs>
-  </defs>
-  <g id="linkedin" transform="translate(-1 -1)" >
-    <path id="asdasd" d="M20.9,0H2.3A1.818,1.818,0,0,0,.4,1.736v18.64a1.961,1.961,0,0,0,1.9,1.91H20.9a1.861,1.861,0,0,0,1.788-1.91V1.736A1.709,1.709,0,0,0,20.9,0ZM7.308,18.576H4.115V8.65H7.308ZM5.822,7.14H5.8A1.639,1.639,0,0,1,4.115,5.428,1.648,1.648,0,0,1,5.839,3.715,1.644,1.644,0,0,1,7.546,5.428,1.649,1.649,0,0,1,5.822,7.14ZM18.976,18.576H15.783V13.149c0-1.3-.465-2.189-1.62-2.189a1.746,1.746,0,0,0-1.637,1.178,2.152,2.152,0,0,0-.11.784v5.654H9.223V8.65h3.193v1.381A3.233,3.233,0,0,1,15.3,8.417c2.1,0,3.681,1.381,3.681,4.36Z" transform="translate(4.608 4.515)" fill="#fff"/>
-  </g>
-</svg>
-</a>
-                            <a data-is-external="1" target="_blank" href="https://t.me/gameupir"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-  <defs>
-  </defs>
-  <g id="telegram" transform="translate(-1 -1)" >
-    <path id="Vector-1" d="M10.136.25A9.751,9.751,0,1,0,19.75,9.865,9.751,9.751,0,0,0,10.136.25Zm4.317,5.964L10.6,14.958a.512.512,0,0,1-.974-.214V10.563a.187.187,0,0,0-.187-.187H5.257a.509.509,0,0,1-.214-.969l8.744-3.859a.5.5,0,0,1,.667.668Z" transform="translate(6.15 5.658)" fill="#fff"/>
-  </g>
-</svg>
-</a>
-                            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-  <defs>
-  </defs>
-  <g id="whatsapp" transform="translate(-1 -1)" >
-    <path id="Vector-2" d="M10,0A10,10,0,0,0,1.115,14.585l-1.07,3.83a1.252,1.252,0,0,0,1.54,1.54l3.83-1.07A10,10,0,1,0,10,0Zm5.18,13.685A2.678,2.678,0,0,1,13.4,14.94c-.485.045-.94.22-3.17-.66A10.812,10.812,0,0,1,5.7,10.285,5.1,5.1,0,0,1,4.625,7.55,2.976,2.976,0,0,1,5.55,5.345a.974.974,0,0,1,.7-.33c.18,0,.355,0,.51.005.185.01.395.02.6.46.235.52.75,1.83.815,1.965a.479.479,0,0,1,.02.46,1.664,1.664,0,0,1-.265.44c-.13.155-.275.345-.395.465a.393.393,0,0,0-.115.54,7.981,7.981,0,0,0,1.47,1.83A7.333,7.333,0,0,0,11.015,12.5c.265.13.42.11.575-.07s.66-.77.84-1.035.35-.22.6-.13,1.54.725,1.805.86.44.195.505.305a2.237,2.237,0,0,1-.155,1.26Z" transform="translate(6.399 5.158)" fill="#fff"/>
-  </g>
-</svg>
-</a>
-                            <a data-is-external="1" href="mailto:support@gameup.ir"><svg id="email" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-
-  <path id="Combined-Shape" d="M42,24.166A12.011,12.011,0,0,0,28.166,38H10a4,4,0,0,1-4-4V16a4,4,0,0,1,4-4H38a4,4,0,0,1,4,4Zm-5.711-8.487L24,22.3,11.711,15.679a1.5,1.5,0,0,0-1.422,2.641l13,7a1.5,1.5,0,0,0,1.422,0l13-7a1.5,1.5,0,0,0-1.422-2.641Z" fill="#7b879f" fill-rule="evenodd"/>
-  <circle id="Oval" cx="5" cy="5" r="5" transform="translate(34 30)" fill="#7b879f" opacity="0.3"/>
-</svg>
-</a>
-                        </div>
-
-                        <div class="float-left">
-
-                            <div class="nav-item nav-icon">
-                                <a class="gu_discord" aria-label="Gameup discord" href="https://gameup.ir/discord" target="_blank" rel="nofollow" data-is-external="1"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-  <defs>
-  </defs>
-  <g id="discord" transform="translate(-1 -1)" >
-    <path id="Path_2" data-name="Path 2" d="M20.563,1.947A20.031,20.031,0,0,0,15.619.413a.075.075,0,0,0-.079.038,13.953,13.953,0,0,0-.616,1.265,18.492,18.492,0,0,0-5.553,0A12.8,12.8,0,0,0,8.745.451.078.078,0,0,0,8.666.413,19.975,19.975,0,0,0,3.721,1.947a.071.071,0,0,0-.033.028A20.5,20.5,0,0,0,.1,15.8a.083.083,0,0,0,.032.057A20.143,20.143,0,0,0,6.2,18.923a.079.079,0,0,0,.085-.028,14.4,14.4,0,0,0,1.241-2.018.077.077,0,0,0-.042-.107,13.265,13.265,0,0,1-1.895-.9.078.078,0,0,1-.008-.129c.127-.1.255-.195.376-.295a.075.075,0,0,1,.079-.011,14.365,14.365,0,0,0,12.207,0,.075.075,0,0,1,.079.01c.122.1.249.2.377.3a.078.078,0,0,1-.007.129,12.448,12.448,0,0,1-1.9.9.078.078,0,0,0-.041.108,16.165,16.165,0,0,0,1.24,2.017.077.077,0,0,0,.085.029,20.076,20.076,0,0,0,6.075-3.066.078.078,0,0,0,.032-.056A20.366,20.366,0,0,0,20.595,1.975.062.062,0,0,0,20.563,1.947ZM8.117,13.041a2.335,2.335,0,0,1-2.183-2.448A2.322,2.322,0,0,1,8.117,8.144,2.309,2.309,0,0,1,10.3,10.592,2.322,2.322,0,0,1,8.117,13.041Zm8.071,0a2.335,2.335,0,0,1-2.183-2.448,2.322,2.322,0,0,1,2.183-2.448,2.309,2.309,0,0,1,2.183,2.448A2.316,2.316,0,0,1,16.188,13.041Z" transform="translate(4 6.913)" fill="#fff"/>
-  </g>
-</svg>
-<label class="badge">15.1K</label></a>
-                            </div>
-
-                            <div class="nav-item nav-icon cart-icon">
-                                <a class="" aria-label="cart" href="/cart/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.9766 1.99893C1.4243 1.99443 0.981096 2.44663 0.976596 2.99893C0.972096 3.55123 1.4244 3.99443 1.9766 3.99893C2.7142 4.00493 3.3043 4.49883 3.7578 5.43643C4.1818 6.31293 4.30569 7.03423 4.32039 7.12393L5.50779 14.7801C5.87149 16.6034 7.59969 17.9989 9.41409 17.9989H16.5391C18.3534 17.9989 20.0895 16.5905 20.4454 14.8114L21.6641 6.68643C21.948 5.27263 20.9041 3.99893 19.4141 3.99893H5.2578C4.506 2.76003 3.3598 2.01013 1.9766 1.99893ZM6.13279 5.99893H19.4141C19.642 5.99893 19.7401 6.11923 19.6954 6.34273L18.4766 14.4677C18.316 15.2647 17.4001 15.9989 16.5391 15.9989H9.41409C8.55309 15.9989 7.64539 15.2807 7.47659 14.4364L6.32039 6.81143C6.28549 6.59873 6.20479 6.26163 6.13279 5.99893ZM8.47659 18.9989C7.64819 18.9989 6.97659 19.6705 6.97659 20.4989C6.97659 21.3273 7.64819 21.9989 8.47659 21.9989C9.30499 21.9989 9.97659 21.3273 9.97659 20.4989C9.97659 19.6705 9.30499 18.9989 8.47659 18.9989ZM17.4766 18.9989C16.6482 18.9989 15.9766 19.6705 15.9766 20.4989C15.9766 21.3273 16.6482 21.9989 17.4766 21.9989C18.305 21.9989 18.9766 21.3273 18.9766 20.4989C18.9766 19.6705 18.305 18.9989 17.4766 18.9989Z" fill="white"/>
-</svg>
-<label class="badge cart-item-count" style="opacity:0;">0</label></a>
-                            </div>
-
-                            <div class="nav-item nav-icon inmob" style="display:none !important;">
-                                <a class="" aria-label="search" onclick="$('.topsearch.full-width-search-bar').css('opacity','1').css('pointer-events','auto')"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 4C7.5817 4 4 7.58201 4 12C4 16.418 7.5817 20 12 20C13.8367 20 15.5776 19.369 16.9279 18.329L19.2812 20.719C19.6718 21.109 20.3282 21.109 20.7188 20.719C21.1093 20.328 21.1093 19.672 20.7188 19.281L18.3353 16.921C19.3761 15.571 20 13.837 20 12C20 7.58201 16.4183 4 12 4ZM12 6C15.3137 6 18 8.68601 18 12C18 15.314 15.3137 18 12 18C8.6863 18 6 15.314 6 12C6 8.68601 8.6863 6 12 6Z" fill="currentColor" fill-rule="evenodd" />
-</svg>
-</a>
-                            </div>
-
-
-                            <!-- <div class="nav-item nav-icon dropdown chlang">
-                                <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-label="languages" href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.999 2.01416C6.47622 2.01416 1.99902 6.49116 1.99902 12.0142C1.99902 13.6302 2.38582 15.1512 3.06612 16.5022C4.71152 19.7692 7.99512 22.0132 11.999 22.0142C17.5218 22.0152 21.999 17.5372 21.999 12.0142C21.999 6.49116 17.5218 2.01416 11.999 2.01416ZM11.999 4.01416C12.9309 4.01416 14.002 5.60316 14.535 7.94016C13.7259 7.99216 12.8786 8.01416 11.999 8.01416C11.1157 8.01416 10.2683 7.98115 9.45813 7.92715C9.99073 5.67715 11.0671 4.01416 11.999 4.01416ZM8.46382 4.83716C8.00792 5.67616 7.67292 6.74216 7.44542 7.74716C6.70562 7.64716 6.03592 7.50216 5.47242 7.35916C6.24792 6.29816 7.27922 5.40316 8.46382 4.83716ZM15.5485 4.83115C16.6351 5.39315 17.7309 6.28517 18.5236 7.37717C17.9607 7.51817 17.2724 7.64317 16.5365 7.74017C16.309 6.73517 15.9259 5.61815 15.5485 4.83115ZM4.52322 9.16415C5.28162 9.39515 6.06402 9.56716 7.11603 9.70816C7.02973 10.4692 6.99902 11.1992 6.99902 12.0142C6.99902 12.8292 7.03702 13.5722 7.12332 14.3332C6.05112 14.4772 5.27362 14.6172 4.50372 14.8512C4.15042 13.9482 3.99902 13.0422 3.99902 12.0142C3.99902 10.9862 4.16992 10.0672 4.52322 9.16415ZM19.4659 9.16916C19.8192 10.0722 19.999 10.9862 19.999 12.0142C19.999 13.0422 19.8266 13.9512 19.4733 14.8542C18.7055 14.6202 17.9285 14.4632 16.8604 14.3202C16.9445 13.5672 16.999 12.8182 16.999 12.0142C16.999 11.1992 16.9443 10.4551 16.858 9.69315C17.9076 9.54815 18.7073 9.39916 19.4659 9.16916ZM9.12692 9.90115C10.0538 9.96815 10.9877 10.0142 11.999 10.0142C13.0046 10.0142 13.9546 9.96816 14.8772 9.89816C14.9616 10.6012 14.999 11.2422 14.999 12.0142C14.999 12.7862 14.9721 13.4102 14.8878 14.1122C13.9621 14.0442 13.0071 14.0142 11.999 14.0142C10.9883 14.0142 10.0422 14.0502 9.11283 14.1192C9.02612 13.4082 8.99903 12.7982 8.99903 12.0142C8.99903 11.2422 9.04252 10.6032 9.12692 9.90115ZM11.999 16.0142C12.8773 16.0142 13.7195 16.0472 14.5283 16.0992C13.9657 18.4402 12.9349 20.0142 11.999 20.0142C11.0671 20.0142 10.0146 18.3642 9.43732 16.0972C10.2486 16.0432 11.1143 16.0142 11.999 16.0142ZM7.45003 16.2922C7.67742 17.2972 8.07322 18.4002 8.45062 19.1882C7.34342 18.6622 6.28032 17.7562 5.46982 16.6702C6.04282 16.5252 6.69152 16.3932 7.45003 16.2922ZM16.5395 16.2902C17.292 16.3882 17.9436 16.5302 18.5156 16.6732C17.791 17.6472 16.7272 18.6112 15.5584 19.1752C15.9847 18.3052 16.312 17.2952 16.5395 16.2902Z" fill="white"/>
-</svg>
-</a>
-                                <div class="dropdown-menu c-scroll left-scroll">
-                                    <a href="#" class="dropdown-item">فارسی</a>
-                                </div>
-                            </div> -->
-
-                                                            <div class="nav-item">
-                                    <a href="/login/?ref=%2F" class="btn button slowlink"  id="navbar-login">
-                                        <span>ورود</span>
-                                    </a>
-                                </div>
-                                <div class="nav-item inpc">
-                                    <a href="/register/?ref=%2F" class="btn button slowlink"  id="navbar-register">
-                                        <span>ثبت‌نام</span>
-                                    </a>
-                                </div>
-                            
-
-
-
-                            
-
-                                                            <div class="nav-item topdl">
-                                    <a href="#download" class="btn button slowlink" id="download-launcher-header">
-                                        <span>دانلود لانچر</span>
-                                    </a>
-                                </div>
-                            
-                        </div>
-                        <!--left-->
-                    </div>
-
-
-
-                    <button type="button" class="navbar-toggler hd-menu collapsed" aria-label="navbar toggler button"  data-toggle="collapse" data-target="#navbarCollapse">
-                        <div class="navbar-toggler-icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </button>
-
-
-                </div>
-                <!--container-->
-            </header>
-            <!--header-->
-
-            <div class="clearfix"></div>
-
-
-            </section>
-            
-<h1 style="display: none;">گیم آپ، مرجع ایرانی دانلود بازی های کامپیوتری</h1>
-
-<div class="clearfix"></div>
-
-
-    <section class="section">
-        <div class="container ">
-            <div class="sw_full swp  slideshow" dir="rtl">
-                <div class="swiper-wrapper">
-                                            <div class="swiper-slide hover">
-                            <a href="/game/RedDeadRedemption2"  id="topslider-RedDeadRedemption2">
-                                <div class="overflow">
-                                    <div class="placeholder"><img loading="lazy" alt="گیم‌آپ" width="auto" height="auto" id="" src="/assets/V2.0/svg/mask2.svg" /></div><!--place-->
-                                    <img loading="lazy" alt="Red Dead Redemption 2" width="auto" height="auto" id="s0img" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/RedDeadRedemption2/Banner.webp?t=1766320906" />
-                                </div>
-                                <div class="gslide_side" style="min-width: calc(30% - 30px );">
-                                    <h2>این فقط یک بازی نیست، زندگیه 🤠</h2>
-                                    <div class="sgallery" onmouseout="document.getElementById('s0img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/RedDeadRedemption2/Banner.webp?t=1766320906'">
-                                                                                        <img loading="lazy" src="https://onlinecdn.net/1cdn3gameup/games/medias/RedDeadRedemption2/media/ss_4ce07ae360b166f0f650e9a895a3b4b7bf15e34f.1920x1080.webp" onmouseover="document.getElementById('s0img').src='https://onlinecdn.net/1cdn3gameup/games/medias/RedDeadRedemption2/media/ss_4ce07ae360b166f0f650e9a895a3b4b7bf15e34f.1920x1080.webp'" alt="" width="auto" height="auto" />
-                                                                                                <img loading="lazy" src="https://onlinecdn.net/1cdn3gameup/games/medias/RedDeadRedemption2/media/ss_66b553f4c209476d3e4ce25fa4714002cc914c4f.1920x1080.webp" onmouseover="document.getElementById('s0img').src='https://onlinecdn.net/1cdn3gameup/games/medias/RedDeadRedemption2/media/ss_66b553f4c209476d3e4ce25fa4714002cc914c4f.1920x1080.webp'" alt="" width="auto" height="auto" />
-                                                                                                <img loading="lazy" src="https://onlinecdn.net/1cdn3gameup/games/medias/RedDeadRedemption2/media/ss_668dafe477743f8b50b818d5bbfcec669e9ba93e.1920x1080.webp" onmouseover="document.getElementById('s0img').src='https://onlinecdn.net/1cdn3gameup/games/medias/RedDeadRedemption2/media/ss_668dafe477743f8b50b818d5bbfcec669e9ba93e.1920x1080.webp'" alt="" width="auto" height="auto" />
-                                                                                                <img loading="lazy" src="https://onlinecdn.net/1cdn3gameup/games/medias/RedDeadRedemption2/media/ss_bac60bacbf5da8945103648c08d27d5e202444ca.1920x1080.webp" onmouseover="document.getElementById('s0img').src='https://onlinecdn.net/1cdn3gameup/games/medias/RedDeadRedemption2/media/ss_bac60bacbf5da8945103648c08d27d5e202444ca.1920x1080.webp'" alt="" width="auto" height="auto" />
-                                                                                    </div>
-                                    <span>روایت سینمایی موسیقی ماندگار و جزئیات خیره‌کننده باعث شده Red Dead Redemption 2 یکی از ماندگارترین داستان‌های تاریخ بازی‌ها رو رقم بزنه</span>
-                                    <div class="clearfix"></div>
-                                    <button class="btn btn-effect button stickbtn float-right ga-topslider-dlinstall-RedDeadRedemption2"><span>دانلود و نصب</span></button>
-                                </div>
-                            </a>
-                        </div>
-                        <!--slide-->
-                                                <div class="swiper-slide hover">
-                            <a href="/game/Videl"  id="topslider-Videl">
-                                <div class="overflow">
-                                    <div class="placeholder"><img loading="lazy" alt="گیم‌آپ" width="auto" height="auto" id="" src="/assets/V2.0/svg/mask2.svg" /></div><!--place-->
-                                    <img loading="lazy" alt="Videl" width="auto" height="auto" id="s1img" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/Banner.webp?t=1783252999" />
-                                </div>
-                                <div class="gslide_side" style="min-width: calc(30% - 30px );">
-                                    <h2>لحظه‌ای که منتظرش بودی: ویدل رسید!</h2>
-                                    <div class="sgallery" onmouseout="document.getElementById('s1img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/Banner.webp?t=1783252999'">
-                                                                                        <img loading="lazy" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/media/Videl Screenshots (8).webp" onmouseover="document.getElementById('s1img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/media/Videl Screenshots (8).webp'" alt="" width="auto" height="auto" />
-                                                                                                <img loading="lazy" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/media/Videl Screenshots (9).webp" onmouseover="document.getElementById('s1img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/media/Videl Screenshots (9).webp'" alt="" width="auto" height="auto" />
-                                                                                                <img loading="lazy" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/media/Videl Screenshots (6).webp" onmouseover="document.getElementById('s1img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/media/Videl Screenshots (6).webp'" alt="" width="auto" height="auto" />
-                                                                                                <img loading="lazy" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/media/Videl Screenshots (7).webp" onmouseover="document.getElementById('s1img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/Videl/media/Videl Screenshots (7).webp'" alt="" width="auto" height="auto" />
-                                                                                    </div>
-                                    <span>فان تاون جای کمپرها نیست! اینجا هیچ کس صبر نمیکنه. همه با W و Shift می دون و خشاب هاشونو رو گنگ حریف خالی میکنن. اگر مرد میدون هستی بیا وسط دعوا! راستی با اینترنت پایین و سیستم ضعیف هم میتونی از ویدل لذت ببری.</span>
-                                    <div class="clearfix"></div>
-                                    <button class="btn btn-effect button stickbtn float-right ga-topslider-dlinstall-Videl"><span>دانلود و نصب</span></button>
-                                </div>
-                            </a>
-                        </div>
-                        <!--slide-->
-                                                <div class="swiper-slide hover">
-                            <a href="/game/MortalShellII"  id="topslider-MortalShellII">
-                                <div class="overflow">
-                                    <div class="placeholder"><img loading="lazy" alt="گیم‌آپ" width="auto" height="auto" id="" src="/assets/V2.0/svg/mask2.svg" /></div><!--place-->
-                                    <img loading="lazy" alt="Mortal Shell II" width="auto" height="auto" id="s2img" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/Banner.webp?t=1787658402" />
-                                </div>
-                                <div class="gslide_side" style="min-width: calc(30% - 30px );">
-                                    <h2>این یکی برای عاشقای سولزلایک 💀</h2>
-                                    <div class="sgallery" onmouseout="document.getElementById('s2img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/Banner.webp?t=1787658402'">
-                                                                                        <img loading="lazy" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/media/ss_20cf47b479113b64ef1284ccdaaf049989073000.1920x1080.webp" onmouseover="document.getElementById('s2img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/media/ss_20cf47b479113b64ef1284ccdaaf049989073000.1920x1080.webp'" alt="" width="auto" height="auto" />
-                                                                                                <img loading="lazy" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/media/ss_a38e76ebe240fb97b0d81e5a38569c0991d3ca63.1920x1080.webp" onmouseover="document.getElementById('s2img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/media/ss_a38e76ebe240fb97b0d81e5a38569c0991d3ca63.1920x1080.webp'" alt="" width="auto" height="auto" />
-                                                                                                <img loading="lazy" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/media/ss_c00a163b2843460386cad95df44de5d47a79fc26.1920x1080.webp" onmouseover="document.getElementById('s2img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/media/ss_c00a163b2843460386cad95df44de5d47a79fc26.1920x1080.webp'" alt="" width="auto" height="auto" />
-                                                                                                <img loading="lazy" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/media/ss_c38138e1c7c7c84636a08b2729bd983728f2c597.1920x1080.webp" onmouseover="document.getElementById('s2img').src='https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/MortalShellII/media/ss_c38138e1c7c7c84636a08b2729bd983728f2c597.1920x1080.webp'" alt="" width="auto" height="auto" />
-                                                                                    </div>
-                                    <span>اگه از بازی‌های سولزلایک و مبارزه‌های سخت لذت می‌بری، Mortal Shell II می‌تونه با دنیای تاریک و نبردهای نفس‌گیرش حسابی سرگرمت کنه.</span>
-                                    <div class="clearfix"></div>
-                                    <button class="btn btn-effect button stickbtn float-right ga-topslider-dlinstall-MortalShellII"><span>دانلود و نصب</span></button>
-                                </div>
-                            </a>
-                        </div>
-                        <!--slide-->
-                                                <div class="swiper-slide hover">
-                            <a href="/game/ForzaHorizon6"  id="topslider-ForzaHorizon6">
-                                <div class="overflow">
-                                    <div class="placeholder"><img loading="lazy" alt="گیم‌آپ" width="auto" height="auto" id="" src="/assets/V2.0/svg/mask2.svg" /></div><!--place-->
-                                    <img loading="lazy" alt="Forza Horizon 6" width="auto" height="auto" id="s3img" src="https://cdn02.onlinecdn.net/1cdn3gameup2/games/medias/ForzaHorizon6/Banner.webp?t=1779707808" />
-                                </div>
-                                <div class="gslide_side" 
+            // Prevent any right-click or text selection to emphasize static nature,
+            // but without interfering with accessibility (keep it subtle).
+            document.body.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            // Optional: disable selection only on the card to reinforce no-copy policy
+            const card = document.querySelector('.glass-card');
+            if (card) {
+                card.addEventListener('selectstart', function(e) {
+                    e.preventDefault();
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
